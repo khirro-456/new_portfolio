@@ -1,0 +1,94 @@
+// ═══════════════════════════════════════════════════════════
+//  Modal system
+// ═══════════════════════════════════════════════════════════
+
+.modal-backdrop
+  position: fixed
+  inset: 0
+  z-index: 200
+  background: var(--modal-backdrop-bg)
+  backdrop-filter: blur(6px)
+  -webkit-backdrop-filter: blur(6px)
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: sp(4)
+  opacity: 0
+  pointer-events: none
+  transition: opacity var(--transition-base)
+
+  &:not([hidden])
+    pointer-events: auto
+
+  &.is-open
+    opacity: 1
+
+.modal
+  position: relative
+  background: var(--color-surface)
+  border: 1px solid var(--color-border)
+  border-radius: $radius-2xl
+  box-shadow: var(--shadow-lg)
+  width: 100%
+  max-width: var(--content-default)
+  max-height: 88dvh
+  overflow-y: auto
+  padding: sp(8) sp(8) sp(10)
+  transform: scale(0.94) translateY(12px)
+  opacity: 0
+  transition: transform var(--transition-slow), opacity var(--transition-slow)
+
+  .is-open &
+    transform: scale(1) translateY(0)
+    opacity: 1
+
+  &--narrow
+    max-width: var(--content-narrow)
+
+  &::-webkit-scrollbar
+    width: 5px
+
+  &::-webkit-scrollbar-track
+    background: transparent
+
+  &::-webkit-scrollbar-thumb
+    background: var(--color-border)
+    border-radius: $radius-full
+
+  &-header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: sp(2)
+
+  &-close
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 36px
+    height: 36px
+    border-radius: $radius-md
+    color: var(--color-text-muted)
+    border: 1px solid var(--color-border)
+    background: none
+    flex-shrink: 0
+    transition: color $transition-fast, background $transition-fast, transform $transition-fast
+
+    &:hover
+      color: var(--color-text)
+      background: var(--color-surface-offset)
+      transform: rotate(90deg)
+
+  &-title
+    font-family: var(--font-display)
+    font-size: var(--text-2xl)
+    font-weight: 700
+    letter-spacing: -0.03em
+    color: var(--color-text)
+    margin-bottom: sp(8)
+    max-width: 24ch
+
+@media (max-width: 768px)
+  .modal
+    padding: sp(6)
+    max-height: 92dvh

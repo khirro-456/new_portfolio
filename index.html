@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Personal portfolio of [Your Name] — a developer who crafts clean, intentional digital experiences." />
-  <title>[MEL BHOY DENAQUE] — Developer</title>
+  <meta name="description" content="Personal portfolio of [Mel Bhoy Denaque] — a developer who crafts clean, intentional digital experiences." />
+  <title>[Mel Bhoy] — Developer</title>
 
   <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
@@ -23,7 +23,7 @@
           <path d="M10 26V10H16.5C19.5 10 22 12 22 15C22 18 19.5 20 16.5 20H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M19 20L26 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span class="nav-logo-text">[MBD]</span>
+        <span class="nav-logo-text">mel Bhoy</span>
       </a>
 
       <ul class="nav-links" role="list">
@@ -48,26 +48,28 @@
   <main id="main" class="hero-wrapper">
     <section class="hero container">
 
-      <div class="hero-eyebrow">
-        <span class="status-dot" aria-hidden="true"></span>
-        Available for work
-      </div>
+  <div class="hero-eyebrow">
+    <span class="status-dot" aria-hidden="true"></span>
+    Available for work
+  </div>
 
+  <!-- ↓ This wrapper is what creates the two columns -->
+  <div class="hero-inner">
+
+    <!-- Column 1: all text -->
+    <div class="hero-text">
       <h1 class="hero-heading">
         I build things<br/>
         <em>people actually use.</em>
       </h1>
-
       <p class="hero-sub">
         Full-stack developer based in the Philippines. I design and build fast,
         accessible web experiences — from idea to deployment.
       </p>
-
       <div class="hero-cta">
         <button class="btn-primary" data-modal="work">See my work</button>
         <button class="btn-ghost" data-modal="about">About me</button>
       </div>
-
       <div class="hero-stack" aria-label="Technologies I work with">
         <span class="stack-tag">HTML</span>
         <span class="stack-tag">CSS</span>
@@ -76,8 +78,25 @@
         <span class="stack-tag">Node.js</span>
         <span class="stack-tag">Figma</span>
       </div>
+    </div>
 
-    </section>
+    <!-- Column 2: photo -->
+    <div class="hero-photo-wrap">
+      <img
+        src="./assets/photo.jpg"
+        alt="[Mel Bhoy Denaque ] — Full-stack Developer"
+        width="420"
+        height="520"
+        class="hero-photo"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+  </div>
+  <!-- ↑ hero-inner closes here -->
+
+</section>
   </main>
 
   <!-- ─── FOOTER ─────────────────────────────────────────── -->
@@ -197,7 +216,7 @@
 
       <div class="about-grid">
         <div class="about-text">
-          <p>I'm [Your Name], a self-taught full-stack developer from Imus, Cavite. I started writing code at 16 out of curiosity and never stopped. Today I help businesses and individuals turn ideas into real, working products.</p>
+          <p>I'm Mel Bhoy Denaque, a self-taught full-stack developer from Imus, Cavite. I started writing code at 16 out of curiosity and never stopped. Today I help businesses and individuals turn ideas into real, working products.</p>
           <p>I care a lot about how things feel — not just how they work. Fast load times, clean layouts, and smooth interactions aren't extras; they're the baseline.</p>
           <a href="./assets/resume.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">Download CV</a>
         </div>

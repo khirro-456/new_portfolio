@@ -1,0 +1,167 @@
+[MBD] — Mel Bhoy Denaquel · Personal Portfolio
+A handcrafted personal portfolio built with HTML, SCSS (Sass), and vanilla JavaScript. Designed to feel human — no templates, no frameworks, no generic AI aesthetic.
+
+✨ Features
+Dark / Light mode — system preference detected automatically, with a manual toggle
+
+Boska + Satoshi typography pairing — distinctive display serif with a clean grotesque body font
+
+Responsive layout — mobile-first, tested from 375px to 1440px
+
+Smooth animations — scroll reveals, hover states, modal transitions
+
+Hire Me modal — contact form overlay with backdrop blur
+
+Project showcase — featured project + supporting cards grid
+
+Availability badge — live "open to work" status indicator with pulse animation
+
+Stack tags — interactive tech badges in the hero section
+
+Accessible — semantic HTML, keyboard navigation, visible focus rings, ARIA labels
+
+🗂 Project Structure
+text
+new_portfolio/
+├── index.html              # Main HTML file
+├── style.css               # Compiled CSS (do not edit directly)
+├── main.js                 # Theme toggle, modal, scroll animations
+├── assets/
+│   └── photo.jpg           # Profile photo
+└── scss/
+    ├── main.sass           # Sass entry point (@import all partials)
+    ├── _tokens.sass        # Design tokens — colors, spacing, type scale
+    ├── _base.sass          # Reset, base styles, typography
+    ├── _components.sass    # Navbar, buttons, hero, stack tags
+    ├── _content.sass       # Projects, About, Contact sections
+    └── _modal.sass         # Modal backdrop and animation
+🚀 Getting Started
+Prerequisites
+Node.js (for Sass CLI)
+
+Sass — install globally via npm:
+
+bash
+npm install -g sass
+Live Server (VS Code extension recommended)
+
+Run Locally
+Clone or download the repository into your local machine.
+
+Open the new_portfolio/ folder in VS Code.
+
+Start the Sass watcher to compile SCSS to CSS on save:
+
+bash
+sass --watch scss/main.sass:style.css --silence-deprecation=import
+Launch Live Server — right-click index.html → Open with Live Server, or click Go Live in the VS Code status bar.
+
+Open your browser at http://127.0.0.1:5500/index.html.
+
+Build for Production
+Compile a minified CSS for deployment:
+
+bash
+sass scss/main.sass:style.css --style=compressed --silence-deprecation=import
+🎨 Design System
+Color Palette
+Token	Light	Dark	Usage
+--color-bg	#f7f6f2	#111110	Page background
+--color-surface	#f9f8f5	#1a1917	Card / nav surfaces
+--color-text	#1e1c18	#e8e6e1	Primary text
+--color-text-muted	#6b6a65	#7c7b76	Secondary text
+--color-primary	#01696f	#4f9ea3	Accent — teal
+Typography
+Role	Font	Sizes
+Display / Headings	Boska (Fontshare)	--text-xl → --text-3xl
+Body / UI	Satoshi (Fontshare)	--text-xs → --text-lg
+Fluid Type Scale
+All font sizes use clamp() — they scale smoothly between mobile and desktop:
+
+text
+--text-xs   → 12px – 14px
+--text-sm   → 14px – 16px
+--text-base → 16px – 18px
+--text-lg   → 18px – 24px
+--text-xl   → 24px – 36px
+--text-2xl  → 32px – 56px
+--text-3xl  → 40px – 80px
+🛠 Tech Stack
+Technology	Purpose
+HTML5	Semantic structure
+CSS3 / Custom Properties	Design tokens, layout, animations
+Sass (SCSS indented syntax)	Modular styles, variables, mixins
+Vanilla JavaScript	Theme toggle, modals, scroll reveals
+Fontshare CDN	Boska + Satoshi fonts
+Lucide Icons	Lightweight SVG icon set
+📐 Sass Architecture
+The SCSS follows a partial-based architecture — each file has a single responsibility:
+
+_tokens.sass — all design tokens (colors, spacing, radius, transitions)
+
+_base.sass — CSS reset and global element styles
+
+_components.sass — navbar, buttons, hero section, stack tags, footer
+
+_modal.sass — modal backdrop, open/close animations
+
+_content.sass — projects grid, about section, contact section
+
+All partials are imported in main.sass in the correct dependency order.
+
+Note: The project uses Sass @import with the --silence-deprecation=import flag. Migrating to @use/@forward is planned for a future update.
+
+📱 Responsive Breakpoints
+Breakpoint	Behavior
+> 900px	Full hero grid — text left, photo right
+≤ 900px	Photo hidden, text full width
+≤ 768px	Projects stack to single column
+≤ 600px	Nav links hidden (mobile layout)
+≤ 480px	Hire Me button hidden, CTA stacks vertically
+⚙️ Customization
+Update your info
+All personal content is in index.html. Search for these sections to update:
+
+Hero heading — <h1 class="hero-heading">
+
+Bio / subtitle — <p class="hero-sub">
+
+Stack tags — <span class="stack-tag"> list
+
+Projects — .project-card blocks inside the Work modal
+
+About text — .about-text paragraphs
+
+Contact email — <a class="contact-email">
+
+Social links — .contact-social anchor tags
+
+Swap your photo
+Replace assets/photo.jpg with your own photo. Keep the filename the same, or update the src in index.html:
+
+xml
+<img src="./assets/your-photo.jpg" class="hero-photo" alt="Your Name" ... />
+Change accent color
+In _tokens.sass, update the primary color variables:
+
+less
+$color-primary:       #01696f  // light mode accent
+$color-primary-hover: #0c4e54  // light mode hover
+Also update the dark mode overrides in the [data-theme="dark"] block in style.css or _tokens.sass.
+
+🌐 Deployment
+This is a static site — deploy to any static host:
+
+GitHub Pages — push to a gh-pages branch or enable Pages on main
+
+Netlify — drag and drop the new_portfolio/ folder
+
+Vercel — connect the repo, set output directory to new_portfolio/
+
+Make sure to run the production Sass build before deploying so style.css is up to date.
+
+📄 License
+MIT License — free to use, modify, and redistribute with attribution.
+
+Designed & built by hand — Mel Bhoy Denaquel · 2026
+
