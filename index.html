@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio of [Your Name] — a developer who crafts clean, intentional digital experiences." />
+  <title>[MEL BHOY DENAQUE] — Developer</title>
+
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+  <header class="nav-wrapper">
+    <nav class="nav container" aria-label="Main navigation">
+
+      <a href="#" class="nav-logo" aria-label="Home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect width="36" height="36" rx="8" fill="currentColor" fill-opacity="0.08"/>
+          <path d="M10 26V10H16.5C19.5 10 22 12 22 15C22 18 19.5 20 16.5 20H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 20L26 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="nav-logo-text">[MBD]</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><button class="nav-btn" data-modal="work">Work</button></li>
+        <li><button class="nav-btn" data-modal="about">About</button></li>
+        <li><button class="nav-btn" data-modal="contact">Contact</button></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="btn-hire" data-modal="contact">Hire Me</button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ─── HERO ───────────────────────────────────────────── -->
+  <main id="main" class="hero-wrapper">
+    <section class="hero container">
+
+      <div class="hero-eyebrow">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for work
+      </div>
+
+      <h1 class="hero-heading">
+        I build things<br/>
+        <em>people actually use.</em>
+      </h1>
+
+      <p class="hero-sub">
+        Full-stack developer based in the Philippines. I design and build fast,
+        accessible web experiences — from idea to deployment.
+      </p>
+
+      <div class="hero-cta">
+        <button class="btn-primary" data-modal="work">See my work</button>
+        <button class="btn-ghost" data-modal="about">About me</button>
+      </div>
+
+      <div class="hero-stack" aria-label="Technologies I work with">
+        <span class="stack-tag">HTML</span>
+        <span class="stack-tag">CSS</span>
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">Figma</span>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer container">
+    <p class="footer-copy">© 2026 [Mel Bhoy Denaque]. Designed &amp; built by hand.</p>
+    <div class="footer-links">
+      <button class="footer-nav-btn" data-modal="work">Work</button>
+      <span class="contact-divider" aria-hidden="true">·</span>
+      <button class="footer-nav-btn" data-modal="about">About</button>
+      <span class="contact-divider" aria-hidden="true">·</span>
+      <button class="footer-nav-btn" data-modal="contact">Contact</button>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MODALS
+  ════════════════════════════════════════════════════════ -->
+
+  <!-- ── WORK MODAL ── -->
+  <div class="modal-backdrop" id="modal-work" role="dialog" aria-modal="true" aria-labelledby="modal-work-title" hidden>
+    <div class="modal">
+      <div class="modal-header">
+        <span class="section-label">Selected Work</span>
+        <button class="modal-close" data-close aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <h2 id="modal-work-title" class="modal-title">Projects I'm proud of</h2>
+
+      <div class="projects-grid">
+
+        <!-- Featured -->
+        <article class="project-card project-card--featured">
+          <div class="project-img-wrap">
+            <img src="https://picsum.photos/seed/proj-dash/900/500" alt="Analytics Dashboard screenshot" width="900" height="500" loading="lazy" decoding="async"/>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-tag">Web App</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">Analytics Dashboard</h3>
+            <p class="project-desc">Real-time data dashboard for a local logistics company. Reduced reporting time by 60% with live charts and filters.</p>
+            <div class="project-links">
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                Live site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="project-card">
+          <div class="project-img-wrap">
+            <img src="https://picsum.photos/seed/proj-store/600/360" alt="Local Market Store screenshot" width="600" height="360" loading="lazy" decoding="async"/>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-tag">E-Commerce</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">Local Market Store</h3>
+            <p class="project-desc">Custom storefront for a local artisan market with cart, checkout, and inventory management.</p>
+            <div class="project-links">
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                Live site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="project-card">
+          <div class="project-img-wrap">
+            <img src="https://picsum.photos/seed/proj-app/600/360" alt="App Launch Page screenshot" width="600" height="360" loading="lazy" decoding="async"/>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-tag">Landing Page</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 class="project-title">App Launch Page</h3>
+            <p class="project-desc">High-converting landing page for a mobile productivity app. Hit 38% waitlist signup rate on launch day.</p>
+            <div class="project-links">
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                Live site
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT MODAL ── -->
+  <div class="modal-backdrop" id="modal-about" role="dialog" aria-modal="true" aria-labelledby="modal-about-title" hidden>
+    <div class="modal">
+      <div class="modal-header">
+        <span class="section-label">About</span>
+        <button class="modal-close" data-close aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <h2 id="modal-about-title" class="modal-title">A developer who gives a damn about the details.</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm [Your Name], a self-taught full-stack developer from Imus, Cavite. I started writing code at 16 out of curiosity and never stopped. Today I help businesses and individuals turn ideas into real, working products.</p>
+          <p>I care a lot about how things feel — not just how they work. Fast load times, clean layouts, and smooth interactions aren't extras; they're the baseline.</p>
+          <a href="./assets/resume.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">Download CV</a>
+        </div>
+
+        <div class="about-aside">
+          <div class="skills-block">
+            <h3 class="skills-label">What I work with</h3>
+            <ul class="skills-list" role="list">
+              <li>HTML &amp; CSS (advanced)</li>
+              <li>JavaScript / TypeScript</li>
+              <li>React &amp; Next.js</li>
+              <li>Node.js &amp; Express</li>
+              <li>PostgreSQL / MongoDB</li>
+              <li>Figma &amp; UI Design</li>
+              <li>Git &amp; GitHub</li>
+            </ul>
+          </div>
+          <div class="about-note">
+            <span class="about-note-icon" aria-hidden="true">→</span>
+            Currently obsessed with building things that feel good to use.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT MODAL ── -->
+  <div class="modal-backdrop" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title" hidden>
+    <div class="modal modal--narrow">
+      <div class="modal-header">
+        <span class="section-label">Contact</span>
+        <button class="modal-close" data-close aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <h2 id="modal-contact-title" class="modal-title">Let's build something together.</h2>
+      <p class="contact-sub">I'm open to freelance projects, full-time roles, and interesting collaborations. Best way to reach me is by email.</p>
+
+      <a href="mailto:you@email.com" class="contact-email">
+        Melbhoydenaque2@email.com
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <div class="contact-links">
+        <a href="https://github.com/khirro-456" class="contact-social" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="contact-divider" aria-hidden="true">·</span>
+        <a href="https://linkedin.com" class="contact-social" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="contact-divider" aria-hidden="true">·</span>
+        <a href="https://twitter.com" class="contact-social" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
