@@ -1,0 +1,82 @@
+// ─── PARTIALS ─────────────────────────────────────────────────
+@use 'base'
+@use 'buttons'
+@use 'nav'
+@use 'hero'
+@use 'modals'
+@use 'gallery'
+@use 'footer'
+
+  // ─── MAIN ENTRY ───────────────────────────────────────────────
+// Compile: sass main.sass ../style.css --watch --style=compressed
+
+@use 'variables' as v
+
+// ─── CSS CUSTOM PROPERTIES ────────────────────────────────────
+:root,
+[data-theme='light']
+  --font-display: #{v.$font-display}
+  --font-body: #{v.$font-body}
+  --text-xs: #{v.$text-xs}
+  --text-sm: #{v.$text-sm}
+  --text-base: #{v.$text-base}
+  --text-lg: #{v.$text-lg}
+  --text-xl: #{v.$text-xl}
+  --text-2xl: #{v.$text-2xl}
+  --text-hero: #{v.$text-hero}
+
+  // Surfaces
+  --color-bg: #f7f6f2
+  --color-surface: #f9f8f5
+  --color-surface-2: #fbfbf9
+  --color-surface-offset: #f3f0ec
+  --color-surface-dynamic: #e6e4df
+  --color-divider: #dcd9d5
+  --color-border: #d4d1ca
+
+  // Text
+  --color-text: #28251d
+  --color-text-muted: #7a7974
+  --color-text-faint: #bab9b4
+  --color-text-inverse: #f9f8f4
+
+  // Accent — Teal
+  --color-primary: #01696f
+  --color-primary-hover: #0c4e54
+  --color-primary-active: #0f3638
+  --color-primary-highlight: #cedcd8
+
+[data-theme='dark']
+  --color-bg: #171614
+  --color-surface: #1c1b19
+  --color-surface-2: #201f1d
+  --color-surface-offset: #1d1c1a
+  --color-surface-dynamic: #2d2c2a
+  --color-divider: #262523
+  --color-border: #393836
+  --color-text: #cdccca
+  --color-text-muted: #797876
+  --color-text-faint: #5a5957
+  --color-text-inverse: #2b2a28
+  --color-primary: #4f98a3
+  --color-primary-hover: #227f8b
+  --color-primary-active: #1a626b
+  --color-primary-highlight: #313b3b
+
+@media (prefers-color-scheme: dark)
+  :root:not([data-theme])
+    --color-bg: #171614
+    --color-surface: #1c1b19
+    --color-surface-2: #201f1d
+    --color-surface-offset: #1d1c1a
+    --color-surface-dynamic: #2d2c2a
+    --color-divider: #262523
+    --color-border: #393836
+    --color-text: #cdccca
+    --color-text-muted: #797876
+    --color-text-faint: #5a5957
+    --color-text-inverse: #2b2a28
+    --color-primary: #4f98a3
+    --color-primary-hover: #227f8b
+    --color-primary-active: #1a626b
+    --color-primary-highlight: #313b3b

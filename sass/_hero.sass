@@ -1,0 +1,223 @@
+// ─── HERO ─────────────────────────────────────────────────────
+@use 'variables' as v
+
+.hero-wrapper
+  max-width: v.$content-wide
+  margin-inline: auto
+  padding-inline: v.$space-6
+
+  @media (max-width: v.$bp-md)
+    padding-inline: v.$space-4
+
+.hero
+  padding-block: clamp(v.$space-16, 10vw, v.$space-32)
+
+// Availability badge
+.hero-eyebrow
+  display: inline-flex
+  align-items: center
+  gap: v.$space-2
+  margin-bottom: v.$space-6
+  padding: v.$space-2 v.$space-4
+  background: var(--color-surface-offset)
+  border: 1px solid oklch(from var(--color-text) l c h / 0.08)
+  border-radius: v.$radius-full
+  font-size: v.$text-xs
+  font-weight: 500
+  color: var(--color-text-muted)
+  letter-spacing: 0.02em
+
+.status-dot
+  width: 8px
+  height: 8px
+  border-radius: v.$radius-full
+  background: #22c55e
+  box-shadow: 0 0 0 3px oklch(from #22c55e l c h / 0.2)
+  animation: pulse 2.4s ease-in-out infinite
+
+@keyframes pulse
+  0%, 100%
+    box-shadow: 0 0 0 3px oklch(from #22c55e l c h / 0.2)
+  50%
+    box-shadow: 0 0 0 6px oklch(from #22c55e l c h / 0)
+
+// Hero layout
+.hero-inner
+  display: grid
+  grid-template-columns: 1fr auto
+  gap: v.$space-12
+  align-items: center
+
+  @media (max-width: v.$bp-lg)
+    grid-template-columns: 1fr
+
+// Heading
+.hero-heading
+  font-family: var(--font-display)
+  font-size: v.$text-hero
+  font-weight: 500
+  letter-spacing: -0.03em
+  line-height: 1.05
+  color: var(--color-text)
+  margin-bottom: v.$space-6
+
+  em
+    font-style: italic
+    color: var(--color-primary)
+
+.hero-sub
+  font-size: v.$text-lg
+  color: var(--color-text-muted)
+  line-height: 1.6
+  max-width: 50ch
+  margin-bottom: v.$space-8
+
+// CTAs
+.hero-cta
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  gap: v.$space-3
+  margin-bottom: v.$space-10
+
+// Stack tags
+.hero-stack
+  display: flex
+  flex-wrap: wrap
+  gap: v.$space-2
+
+.stack-tag
+  padding: v.$space-1 v.$space-3
+  background: var(--color-surface-offset)
+  border: 1px solid oklch(from var(--color-text) l c h / 0.09)
+  border-radius: v.$radius-full
+  font-size: v.$text-xs
+  font-weight: 500
+  color: var(--color-text-muted)
+  letter-spacing: 0.02em
+
+// Photo
+.hero-photo-wrap
+  flex-shrink: 0
+
+  @media (max-width: v.$bp-lg)
+    order: -1
+    width: 200px
+
+.hero-photo
+  width: clamp(240px, 30vw, 420px)
+  height: auto
+  border-radius: v.$radius-2xl
+  object-fit: cover
+  box-shadow: 0 12px 32px oklch(0.2 0.01 80 / 0.12)
+  aspect-ratio: 4 / 5
+
+  @media (max-width: v.$bp-lg)
+    width: 200px
+
+// ─── HIGHLIGHTS STRIP ─────────────────────────────────────────
+.highlights-strip
+  padding-block: v.$space-16
+  border-top: 1px solid oklch(from var(--color-text) l c h / 0.07)
+
+.highlights-header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: v.$space-6
+
+.highlights-view-all
+  display: inline-flex
+  align-items: center
+  gap: v.$space-2
+  font-size: v.$text-xs
+  font-weight: 600
+  letter-spacing: 0.04em
+  text-transform: uppercase
+  color: var(--color-text-muted)
+
+  &:hover
+    color: var(--color-primary)
+
+.highlights-track
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+  gap: v.$space-3
+
+  @media (max-width: v.$bp-xl)
+    grid-template-columns: repeat(3, 1fr)
+
+  @media (max-width: v.$bp-sm)
+    grid-template-columns: repeat(2, 1fr)
+
+.highlight-card
+  display: flex
+  flex-direction: column
+  gap: v.$space-2
+  background: none
+  border: none
+  cursor: pointer
+  text-align: left
+  padding: 0
+
+  &:hover .highlight-img-wrap
+    transform: translateY(-3px)
+
+  &:hover .highlight-overlay
+    opacity: 1
+
+  &:active .highlight-img-wrap
+    transform: translateY(-1px)
+
+.highlight-img-wrap
+  position: relative
+  border-radius: v.$radius-xl
+  overflow: hidden
+  transition: transform v.$t-smooth
+  background: var(--color-surface-offset)
+
+  img
+    width: 100%
+    aspect-ratio: 4 / 5
+    object-fit: cover
+    display: block
+
+.highlight-overlay
+  position: absolute
+  inset: 0
+  background: oklch(0.1 0.02 200 / 0.5)
+  display: flex
+  align-items: center
+  justify-content: center
+  opacity: 0
+  transition: opacity v.$t-smooth
+  border-radius: v.$radius-xl
+
+.highlight-overlay-icon
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 44px
+  height: 44px
+  background: oklch(1 0 0 / 0.12)
+  border-radius: v.$radius-full
+  color: #fff
+  backdrop-filter: blur(4px)
+
+.highlight-info
+  display: flex
+  flex-direction: column
+  gap: 2px
+  padding-inline: v.$space-1
+
+.highlight-title
+  font-size: v.$text-sm
+  font-weight: 600
+  color: var(--color-text)
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.highlight-date
+  font-size: v.$text-xs
+  color: var(--color-text-faint)

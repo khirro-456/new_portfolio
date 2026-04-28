@@ -1,0 +1,110 @@
+// ─── BASE + RESET ─────────────────────────────────────────────
+@use 'variables' as v
+
+*, *::before, *::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+  text-size-adjust: none
+  scroll-behavior: smooth
+  scroll-padding-top: v.$space-16
+
+body
+  min-height: 100dvh
+  font-family: var(--font-body)
+  font-size: var(--text-base)
+  line-height: 1.65
+  color: var(--color-text)
+  background-color: var(--color-bg)
+  transition: background-color v.$t-smooth, color v.$t-smooth
+
+img, picture, video, canvas, svg
+  display: block
+  max-width: 100%
+  height: auto
+
+ul[role='list'], ol[role='list']
+  list-style: none
+
+input, button, textarea, select
+  font: inherit
+  color: inherit
+
+h1, h2, h3, h4, h5, h6
+  text-wrap: balance
+  line-height: 1.15
+
+p, li, figcaption
+  text-wrap: pretty
+  max-width: 72ch
+
+button
+  cursor: pointer
+  background: none
+  border: none
+
+table
+  border-collapse: collapse
+  width: 100%
+
+::selection
+  background: oklch(from var(--color-primary) l c h / 0.22)
+  color: var(--color-text)
+
+:focus-visible
+  outline: 2px solid var(--color-primary)
+  outline-offset: 3px
+  border-radius: v.$radius-sm
+
+@media (prefers-reduced-motion: reduce)
+  *, *::before, *::after
+    animation-duration: 0.01ms !important
+    animation-iteration-count: 1 !important
+    transition-duration: 0.01ms !important
+    scroll-behavior: auto !important
+
+a, button, [role='button']
+  transition: color v.$t-ui, background v.$t-ui, border-color v.$t-ui, box-shadow v.$t-ui, opacity v.$t-ui
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  white-space: nowrap
+  border-width: 0
+
+.skip-link
+  position: fixed
+  top: v.$space-4
+  left: v.$space-4
+  z-index: 9999
+  padding: v.$space-2 v.$space-4
+  background: var(--color-primary)
+  color: var(--color-text-inverse)
+  border-radius: v.$radius-md
+  font-size: v.$text-sm
+  font-weight: 600
+  text-decoration: none
+  transform: translateY(-200%)
+  transition: transform v.$t-ui
+
+  &:focus-visible
+    transform: translateY(0)
+
+.section-label
+  display: inline-block
+  font-family: var(--font-body)
+  font-size: v.$text-xs
+  font-weight: 600
+  letter-spacing: 0.1em
+  text-transform: uppercase
+  color: var(--color-primary)

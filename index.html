@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Personal portfolio of [Mel Bhoy Denaque] — a developer who crafts clean, intentional digital experiences." />
-  <title>[Mel Bhoy] — Developer</title>
-
+  <meta name="description" content="Personal portfolio of Mel Bhoy Denaque — a developer who crafts clean, intentional digital experiences." />
+  <title>Mel Bhoy — Developer</title>
   <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -15,8 +14,7 @@
 
   <!-- ─── NAVBAR ─────────────────────────────────────────── -->
   <header class="nav-wrapper">
-    <nav class="nav container" aria-label="Main navigation">
-
+    <nav class="nav" aria-label="Main navigation">
       <a href="#" class="nav-logo" aria-label="Home">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
           <rect width="36" height="36" rx="8" fill="currentColor" fill-opacity="0.08"/>
@@ -25,205 +23,211 @@
         </svg>
         <span class="nav-logo-text">mel Bhoy</span>
       </a>
-
       <ul class="nav-links" role="list">
-        <li><button class="nav-btn" data-modal="work">Work</button></li>
+        <li><button class="nav-btn" data-modal="work">Highlights</button></li>
         <li><button class="nav-btn" data-modal="about">About</button></li>
+        <li><button class="nav-btn" data-modal="gallery">Gallery</button></li>
         <li><button class="nav-btn" data-modal="contact">Contact</button></li>
       </ul>
-
       <div class="nav-actions">
         <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="btn-hire" data-modal="contact">Hire Me</button>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
       </div>
-
     </nav>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-nav-links" role="list">
+        <li><button class="mobile-nav-btn" data-modal="work">Highlights</button></li>
+        <li><button class="mobile-nav-btn" data-modal="about">About</button></li>
+        <li><button class="mobile-nav-btn" data-modal="gallery">Gallery</button></li>
+        <li><button class="mobile-nav-btn" data-modal="contact">Contact</button></li>
+      </ul>
+      <button class="mobile-hire-btn" data-modal="contact">Hire Me</button>
+    </div>
   </header>
 
   <!-- ─── HERO ───────────────────────────────────────────── -->
   <main id="main" class="hero-wrapper">
-    <section class="hero container">
-
-  <div class="hero-eyebrow">
-    <span class="status-dot" aria-hidden="true"></span>
-    Available for work
-  </div>
-
-  <!-- ↓ This wrapper is what creates the two columns -->
-  <div class="hero-inner">
-
-    <!-- Column 1: all text -->
-    <div class="hero-text">
-      <h1 class="hero-heading">
-        I build things<br/>
-        <em>people actually use.</em>
-      </h1>
-      <p class="hero-sub">
-        Full-stack developer based in the Philippines. I design and build fast,
-        accessible web experiences — from idea to deployment.
-      </p>
-      <div class="hero-cta">
-        <button class="btn-primary" data-modal="work">See my work</button>
-        <button class="btn-ghost" data-modal="about">About me</button>
+    <section class="hero">
+      <div class="hero-eyebrow">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for work
       </div>
-      <div class="hero-stack" aria-label="Technologies I work with">
-        <span class="stack-tag">HTML</span>
-        <span class="stack-tag">CSS</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">React</span>
-        <span class="stack-tag">Node.js</span>
-        <span class="stack-tag">Figma</span>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-heading">I build things<br/><em>people actually use.</em></h1>
+          <p class="hero-sub">Full-stack developer based in the Philippines. I design and build fast, accessible web experiences — from idea to deployment.</p>
+          <div class="hero-cta">
+            <button class="btn-primary" data-modal="work">See my work</button>
+            <button class="btn-ghost" data-modal="about">About me</button>
+          </div>
+          <div class="hero-stack" aria-label="Technologies I work with">
+            <span class="stack-tag">HTML</span>
+            <span class="stack-tag">CSS</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">Figma</span>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img
+            src="./assets/photo.jpg"
+            alt="Mel Bhoy Denaque — Full-stack Developer"
+            width="420" height="520"
+            class="hero-photo"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Column 2: photo -->
-    <div class="hero-photo-wrap">
-      <img
-        src="./assets/photo.jpg"
-        alt="[Mel Bhoy Denaque ] — Full-stack Developer"
-        width="420"
-        height="520"
-        class="hero-photo"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
+    <!-- ─── HIGHLIGHTS STRIP ──────────────────────────────── -->
+    <section class="highlights-strip" aria-label="Highlights">
+      <div class="highlights-header">
+        <span class="section-label">Highlights</span>
+        <button class="highlights-view-all btn-ghost" data-modal="gallery">
+          View all photos
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="highlights-track" role="list">
 
-  </div>
-  <!-- ↑ hero-inner closes here -->
+        <button class="highlight-card" data-gallery-open="0" role="listitem" aria-label="Open photo: Hackathon Win">
+          <div class="highlight-img-wrap">
+            <img src="assets/IMG_5772.jpg" alt="Hackathon Win" width="400" height="500" loading="lazy" decoding="async"/>
+            <div class="highlight-overlay"><span class="highlight-overlay-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></div>
+          </div>
+          <div class="highlight-info"><span class="highlight-title">Internship culmination</span><span class="highlight-date">2026</span></div>
+        </button>
 
-</section>
+        <button class="highlight-card" data-gallery-open="1" role="listitem" aria-label="Open photo: Graduation Day">
+          <div class="highlight-img-wrap">
+            <img src="assets/IMG_5788.jpg" alt="Graduation Day" width="400" height="500" loading="lazy" decoding="async"/>
+            <div class="highlight-overlay"><span class="highlight-overlay-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></div>
+          </div>
+          <div class="highlight-info"><span class="highlight-title">Dinner sa mga amigo</span><span class="highlight-date">2026</span></div>
+        </button>
+
+        <button class="highlight-card" data-gallery-open="2" role="listitem" aria-label="Open photo: First Client Project">
+          <div class="highlight-img-wrap">
+            <img src="assets/IMG_6102.jpg" alt="First Client Project" width="400" height="500" loading="lazy" decoding="async"/>
+            <div class="highlight-overlay"><span class="highlight-overlay-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></div>
+          </div>
+          <div class="highlight-info"><span class="highlight-title">Preparation of the PSITS Festival of talents</span><span class="highlight-date">2026</span></div>
+        </button>
+
+        <button class="highlight-card" data-gallery-open="3" role="listitem" aria-label="Open photo: Tech Conference">
+          <div class="highlight-img-wrap">
+            <img src="assets/IMG_6808.jpg" alt="Tech Conference" width="400" height="500" loading="lazy" decoding="async"/>
+            <div class="highlight-overlay"><span class="highlight-overlay-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></div>
+          </div>
+          <div class="highlight-info"><span class="highlight-title">System presentation defended</span><span class="highlight-date">2025</span></div>
+        </button>
+
+        <button class="highlight-card" data-gallery-open="4" role="listitem" aria-label="Open photo: Certificate of Excellence">
+          <div class="highlight-img-wrap">
+            <img src="assets/IMG_6407.jpg" alt="Certificate of Excellence" width="400" height="500" loading="lazy" decoding="async"/>
+            <div class="highlight-overlay"><span class="highlight-overlay-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></div>
+          </div>
+          <div class="highlight-info"><span class="highlight-title">Smart home light appliance using arduino</span><span class="highlight-date">2026</span></div>
+        </button>
+
+        <button class="highlight-card" data-gallery-open="5" role="listitem" aria-label="Open photo: Dev Setup">
+          <div class="highlight-img-wrap">
+            <img src="assets/IMG_4448.jpg" alt="Dev Setup" width="400" height="500" loading="lazy" decoding="async"/>
+            <div class="highlight-overlay"><span class="highlight-overlay-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></div>
+          </div>
+          <div class="highlight-info"><span class="highlight-title">certificate of appreciation</span><span class="highlight-date">2026</span></div>
+        </button>
+
+      </div>
+    </section>
   </main>
 
   <!-- ─── FOOTER ─────────────────────────────────────────── -->
-  <footer class="footer container">
-    <p class="footer-copy">© 2026 [Mel Bhoy Denaque]. Designed &amp; built by hand.</p>
+  <footer class="footer">
+    <p class="footer-copy">&copy; 2026 Mel Bhoy Denaque. Designed &amp; built by hand.</p>
     <div class="footer-links">
-      <button class="footer-nav-btn" data-modal="work">Work</button>
-      <span class="contact-divider" aria-hidden="true">·</span>
+      <button class="footer-nav-btn" data-modal="work">Highlights</button>
+      <span class="contact-divider" aria-hidden="true">&middot;</span>
       <button class="footer-nav-btn" data-modal="about">About</button>
-      <span class="contact-divider" aria-hidden="true">·</span>
+      <span class="contact-divider" aria-hidden="true">&middot;</span>
+      <button class="footer-nav-btn" data-modal="gallery">Gallery</button>
+      <span class="contact-divider" aria-hidden="true">&middot;</span>
       <button class="footer-nav-btn" data-modal="contact">Contact</button>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════════════════
-       MODALS
-  ════════════════════════════════════════════════════════ -->
+  <!-- ═══ MODALS ═══════════════════════════════════════════ -->
 
-  <!-- ── WORK MODAL ── -->
-  <div class="modal-backdrop" id="modal-work" role="dialog" aria-modal="true" aria-labelledby="modal-work-title" hidden>
+  <!-- WORK -->
+  <div class="modal-backdrop" id="modal-work" role="dialog" aria-modal="true" aria-labelledby="modal-work-title">
     <div class="modal">
       <div class="modal-header">
         <span class="section-label">Selected Work</span>
-        <button class="modal-close" data-close aria-label="Close modal">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
+        <button class="modal-close" data-close aria-label="Close modal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <h2 id="modal-work-title" class="modal-title">Projects I'm proud of</h2>
-
       <div class="projects-grid">
-
-        <!-- Featured -->
         <article class="project-card project-card--featured">
-          <div class="project-img-wrap">
-            <img src="https://picsum.photos/seed/proj-dash/900/500" alt="Analytics Dashboard screenshot" width="900" height="500" loading="lazy" decoding="async"/>
-          </div>
+          <div class="project-img-wrap"><img src="assets/Screenshot 2026-04-28 135757.png" alt="Analytics Dashboard" width="900" height="500" loading="lazy" decoding="async"/></div>
           <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag">Web App</span>
-              <span class="project-year">2025</span>
-            </div>
-            <h3 class="project-title">Analytics Dashboard</h3>
-            <p class="project-desc">Real-time data dashboard for a local logistics company. Reduced reporting time by 60% with live charts and filters.</p>
+            <div class="project-meta"><span class="project-tag">silent lesson</span><span class="project-year">2025</span></div>
+            <h3 class="project-title">group game using godot.io</h3>
+            <p class="project-desc"></p>
             <div class="project-links">
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                Live site
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                GitHub
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
             </div>
           </div>
         </article>
-
-        <!-- Card 2 -->
         <article class="project-card">
-          <div class="project-img-wrap">
-            <img src="https://picsum.photos/seed/proj-store/600/360" alt="Local Market Store screenshot" width="600" height="360" loading="lazy" decoding="async"/>
-          </div>
+          <div class="project-img-wrap"><img src="assets/da633625ed0c17d35c393206ad36ad3e-1.jpg" alt="Local Market Store" width="600" height="360" loading="lazy" decoding="async"/></div>
           <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag">E-Commerce</span>
-              <span class="project-year">2024</span>
-            </div>
-            <h3 class="project-title">Local Market Store</h3>
-            <p class="project-desc">Custom storefront for a local artisan market with cart, checkout, and inventory management.</p>
-            <div class="project-links">
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                Live site
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-            </div>
+            <div class="project-meta"><span class="project-tag">Folkdance</span><span class="project-year">2024</span></div>
+            <h3 class="project-title">PSITS Festival of talents</h3>
+            <p class="project-desc"></p>
+            <div class="project-links"><a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           </div>
         </article>
-
-        <!-- Card 3 -->
         <article class="project-card">
-          <div class="project-img-wrap">
-            <img src="https://picsum.photos/seed/proj-app/600/360" alt="App Launch Page screenshot" width="600" height="360" loading="lazy" decoding="async"/>
-          </div>
+          <div class="project-img-wrap"><img src="assets/c49e6f3841b1710a1db7e69ebf8c7f84.jpg" alt="App Launch Page" width="600" height="360" loading="lazy" decoding="async"/></div>
           <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tag">Landing Page</span>
-              <span class="project-year">2024</span>
-            </div>
-            <h3 class="project-title">App Launch Page</h3>
-            <p class="project-desc">High-converting landing page for a mobile productivity app. Hit 38% waitlist signup rate on launch day.</p>
-            <div class="project-links">
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                Live site
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-            </div>
+            <div class="project-meta"><span class="project-tag">  Group picture</span><span class="project-year">2024</span></div>
+            <h3 class="project-title">after the [presentation</h3>
+            <p class="project-desc">.</p>
+            <div class="project-links"><a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Live site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           </div>
         </article>
-
       </div>
     </div>
   </div>
 
-  <!-- ── ABOUT MODAL ── -->
-  <div class="modal-backdrop" id="modal-about" role="dialog" aria-modal="true" aria-labelledby="modal-about-title" hidden>
+  <!-- ABOUT -->
+  <div class="modal-backdrop" id="modal-about" role="dialog" aria-modal="true" aria-labelledby="modal-about-title">
     <div class="modal">
       <div class="modal-header">
         <span class="section-label">About</span>
-        <button class="modal-close" data-close aria-label="Close modal">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
+        <button class="modal-close" data-close aria-label="Close modal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <h2 id="modal-about-title" class="modal-title">A developer who gives a damn about the details.</h2>
-
       <div class="about-grid">
         <div class="about-text">
-          <p>I'm Mel Bhoy Denaque, a self-taught full-stack developer from Imus, Cavite. I started writing code at 16 out of curiosity and never stopped. Today I help businesses and individuals turn ideas into real, working products.</p>
+          <p>I'm Mel Bhoy Denaque, a self-taught full-stack developer from Imus, Cavite. I started writing code at 16 out of curiosity and never stopped.</p>
           <p>I care a lot about how things feel — not just how they work. Fast load times, clean layouts, and smooth interactions aren't extras; they're the baseline.</p>
-          <a href="./assets/resume.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <a href="assets/Mel Bhoy Denaque.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">My Resume</a>
         </div>
-
         <div class="about-aside">
           <div class="skills-block">
-            <h3 class="skills-label">What I work with</h3>
+            <span class="skills-label">What I work with</span>
             <ul class="skills-list" role="list">
               <li>HTML &amp; CSS (advanced)</li>
               <li>JavaScript / TypeScript</li>
@@ -235,7 +239,7 @@
             </ul>
           </div>
           <div class="about-note">
-            <span class="about-note-icon" aria-hidden="true">→</span>
+            <span class="about-note-icon" aria-hidden="true">&rarr;</span>
             Currently obsessed with building things that feel good to use.
           </div>
         </div>
@@ -243,30 +247,67 @@
     </div>
   </div>
 
-  <!-- ── CONTACT MODAL ── -->
-  <div class="modal-backdrop" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title" hidden>
+  <!-- GALLERY -->
+  <div class="modal-backdrop" id="modal-gallery" role="dialog" aria-modal="true" aria-labelledby="modal-gallery-title">
+    <div class="modal modal--gallery">
+      <div class="modal-header">
+        <span class="section-label">Photo Album</span>
+        <button class="modal-close" data-close aria-label="Close modal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <h2 id="modal-gallery-title" class="modal-title">Moments &amp; Milestones</h2>
+      <div class="gallery-filters" role="tablist" aria-label="Filter photos">
+        <button class="gallery-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="gallery-filter" data-filter="achievement" role="tab" aria-selected="false">Achievements</button>
+        <button class="gallery-filter" data-filter="event" role="tab" aria-selected="false">Events</button>
+        <button class="gallery-filter" data-filter="personal" role="tab" aria-selected="false">Personal</button>
+      </div>
+      <div class="gallery-grid" role="list">
+        <button class="gallery-item" data-category="achievement" data-index="0" role="listitem" aria-label="View: Hackathon Win 2025"><img src="assets/b495fa41e7f08684523d846c91eb6aaf.jpeg" alt="Hackathon Win 2025" width="600" height="700" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">folkdance Win</span><span class="gallery-item-cat">Achievement &middot; 2026</span></div></button>
+        <button class="gallery-item" data-category="personal" data-index="1" role="listitem" aria-label="View: Graduation Day"><img src="assets/c49e6f3841b1710a1db7e69ebf8c7f84.jpg" alt="Graduation Day" width="600" height="400" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">after of the PSITS </span><span class="gallery-item-cat"> Achievement&middot; 2025</span></div></button>
+        <button class="gallery-item" data-category="achievement" data-index="2" role="listitem" aria-label="View: First Client Project"><img src="assets/da633625ed0c17d35c393206ad36ad3e-1.jpg" alt="First Client Project" width="600" height="500" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">before thr PSITS dance compitation</span><span class="gallery-item-cat">Achievement &middot; 2024</span></div></button>
+        <button class="gallery-item" data-category="event" data-index="3" role="listitem" aria-label="View: Tech Conference"><img src="assets/f7c9e75ffcab61d2482de81940673a8f.jpg" alt="Tech Conference" width="600" height="450" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">Tech Conference</span><span class="gallery-item-cat">Event &middot; 2024</span></div></button>
+        <button class="gallery-item" data-category="achievement" data-index="4" role="listitem" aria-label="View: Certificate of Excellence"><img src="assets/IMG_5788.jpg" alt="Certificate of Excellence" width="600" height="600" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">Dinner with friends</span><span class="gallery-item-cat">personal &middot; 2024</span></div></button>
+        <button class="gallery-item" data-category="personal" data-index="5" role="listitem" aria-label="View: Dev Setup"><img src="assets/IMG_4448.jpg" alt="Dev Setup" width="600" height="400" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">Certificate of Excellence</span><span class="gallery-item-cat"> Achievement&middot; 2024</span></div></button>
+        <button class="gallery-item" data-category="event" data-index="6" role="listitem" aria-label="View: Coding Bootcamp"><img src="assets/IMG_5772.jpg" alt="Coding Bootcamp" width="600" height="550" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title"> Internship Culmination</span><span class="gallery-item-cat">Event &middot; 2024</span></div></button>
+        <button class="gallery-item" data-category="personal" data-index="7" role="listitem" aria-label="View: Late Night Coding"><img src="assets/IMG_6102.jpg" alt="Late Night Coding" width="600" height="480" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">the Trio ni**a</span><span class="gallery-item-cat">Personal &middot; 2023</span></div></button>
+        <button class="gallery-item" data-category="achievement" data-index="8" role="listitem" aria-label="View: Top Performer Award"><img src="assets/IMG_6808.jpg" alt="Top Performer Award" width="600" height="520" loading="lazy" decoding="async"/><div class="gallery-item-info"><span class="gallery-item-title">system defended</span><span class="gallery-item-cat">Achievement &middot; 2026</span></div></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" aria-label="Close lightbox"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="lightbox-prev" aria-label="Previous photo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" src="" alt="" width="1200" height="800"/>
+      <div class="lightbox-caption">
+        <span class="lightbox-title"></span>
+        <span class="lightbox-meta"></span>
+      </div>
+    </div>
+    <button class="lightbox-next" aria-label="Next photo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="modal-backdrop" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title">
     <div class="modal modal--narrow">
       <div class="modal-header">
         <span class="section-label">Contact</span>
-        <button class="modal-close" data-close aria-label="Close modal">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
+        <button class="modal-close" data-close aria-label="Close modal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <h2 id="modal-contact-title" class="modal-title">Let's build something together.</h2>
-      <p class="contact-sub">I'm open to freelance projects, full-time roles, and interesting collaborations. Best way to reach me is by email.</p>
-
-      <a href="mailto:you@email.com" class="contact-email">
-        Melbhoydenaque2@email.com
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-
+      <p class="contact-sub">I'm open to freelance projects, full-time roles, and interesting collaborations.</p>
+      <a href="mailto:Melbhoydenaque2@gmail.com" class="contact-email">
+        Melbhoydenaque2@gmail.com
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>Late
       <div class="contact-links">
         <a href="https://github.com/khirro-456" class="contact-social" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <span class="contact-divider" aria-hidden="true">·</span>
+        <span class="contact-divider" aria-hidden="true">&middot;</span>
         <a href="https://linkedin.com" class="contact-social" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="contact-divider" aria-hidden="true">·</span>
+        <span class="contact-divider" aria-hidden="true">&middot;</span>
         <a href="https://twitter.com" class="contact-social" target="_blank" rel="noopener noreferrer">Twitter</a>
       </div>
     </div>

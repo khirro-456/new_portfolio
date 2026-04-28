@@ -1,0 +1,175 @@
+// ─── NAVBAR ───────────────────────────────────────────────────
+@use 'variables' as v
+
+.nav-wrapper
+  position: sticky
+  top: 0
+  z-index: 100
+  background: oklch(from var(--color-bg) l c h / 0.85)
+  backdrop-filter: blur(12px)
+  -webkit-backdrop-filter: blur(12px)
+  border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.07)
+  transition: background v.$t-smooth
+
+.nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: v.$space-4
+  max-width: v.$content-wide
+  margin-inline: auto
+  padding: v.$space-4 v.$space-6
+
+  @media (max-width: v.$bp-md)
+    padding: v.$space-3 v.$space-4
+
+// Logo
+.nav-logo
+  display: flex
+  align-items: center
+  gap: v.$space-3
+  color: var(--color-text)
+  text-decoration: none
+  flex-shrink: 0
+
+  svg
+    color: var(--color-primary)
+    transition: opacity v.$t-fast
+
+  &:hover svg
+    opacity: 0.75
+
+.nav-logo-text
+  font-family: var(--font-display)
+  font-size: v.$text-lg
+  font-weight: 500
+  letter-spacing: -0.02em
+  color: var(--color-text)
+
+  @media (max-width: v.$bp-sm)
+    display: none
+
+// Desktop links
+.nav-links
+  display: flex
+  align-items: center
+  gap: v.$space-1
+  list-style: none
+
+  @media (max-width: v.$bp-md)
+    display: none
+
+.nav-btn
+  padding: v.$space-2 v.$space-4
+  font-size: v.$text-sm
+  font-weight: 500
+  color: var(--color-text-muted)
+  border-radius: v.$radius-full
+
+  &:hover
+    color: var(--color-text)
+    background: var(--color-surface-offset)
+
+  &:active
+    transform: scale(0.97)
+
+// Actions
+.nav-actions
+  display: flex
+  align-items: center
+  gap: v.$space-3
+
+.theme-toggle
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 36px
+  height: 36px
+  color: var(--color-text-muted)
+  border-radius: v.$radius-full
+
+  &:hover
+    color: var(--color-text)
+    background: var(--color-surface-offset)
+
+// Hamburger
+.nav-hamburger
+  display: none
+  flex-direction: column
+  justify-content: center
+  gap: 5px
+  width: 36px
+  height: 36px
+  padding: v.$space-2
+  border-radius: v.$radius-md
+  color: var(--color-text-muted)
+
+  @media (max-width: v.$bp-md)
+    display: flex
+
+  &:hover
+    background: var(--color-surface-offset)
+    color: var(--color-text)
+
+  &[aria-expanded='true']
+    .hamburger-bar:nth-child(1)
+      transform: translateY(7px) rotate(45deg)
+    .hamburger-bar:nth-child(2)
+      opacity: 0
+      transform: scaleX(0)
+    .hamburger-bar:nth-child(3)
+      transform: translateY(-7px) rotate(-45deg)
+
+.hamburger-bar
+  display: block
+  width: 100%
+  height: 2px
+  background: currentColor
+  border-radius: v.$radius-full
+  transition: transform v.$t-ui, opacity v.$t-ui
+  transform-origin: center
+
+// Mobile menu
+.mobile-menu
+  display: none
+  flex-direction: column
+  gap: v.$space-2
+  padding: v.$space-4 v.$space-4 v.$space-6
+  border-top: 1px solid oklch(from var(--color-text) l c h / 0.07)
+  background: var(--color-bg)
+
+  &.is-open
+    display: flex
+
+.mobile-nav-links
+  display: flex
+  flex-direction: column
+  gap: v.$space-1
+  list-style: none
+
+.mobile-nav-btn
+  display: block
+  width: 100%
+  padding: v.$space-3 v.$space-4
+  text-align: left
+  font-size: v.$text-base
+  font-weight: 500
+  color: var(--color-text-muted)
+  border-radius: v.$radius-lg
+
+  &:hover
+    color: var(--color-text)
+    background: var(--color-surface-offset)
+
+.mobile-hire-btn
+  margin-top: v.$space-2
+  padding: v.$space-3 v.$space-6
+  background: var(--color-primary)
+  color: var(--color-text-inverse)
+  font-size: v.$text-sm
+  font-weight: 600
+  border-radius: v.$radius-full
+  width: fit-content
+
+  &:hover
+    background: var(--color-primary-hover)

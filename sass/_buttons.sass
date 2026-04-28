@@ -1,0 +1,59 @@
+// ─── BUTTONS ──────────────────────────────────────────────────
+@use 'variables' as v
+
+.btn-primary
+  display: inline-flex
+  align-items: center
+  gap: v.$space-2
+  padding: v.$space-3 v.$space-6
+  background: var(--color-primary)
+  color: var(--color-text-inverse)
+  font-size: v.$text-sm
+  font-weight: 600
+  border-radius: v.$radius-full
+  text-decoration: none
+  white-space: nowrap
+
+  &:hover
+    background: var(--color-primary-hover)
+
+  &:active
+    background: var(--color-primary-active)
+    transform: scale(0.98)
+
+.btn-ghost
+  display: inline-flex
+  align-items: center
+  gap: v.$space-2
+  padding: v.$space-3 v.$space-5
+  background: transparent
+  color: var(--color-text-muted)
+  font-size: v.$text-sm
+  font-weight: 500
+  border-radius: v.$radius-full
+  border: 1px solid oklch(from var(--color-text) l c h / 0.14)
+  text-decoration: none
+  white-space: nowrap
+
+  &:hover
+    color: var(--color-text)
+    border-color: oklch(from var(--color-text) l c h / 0.28)
+    background: var(--color-surface-offset)
+
+  &:active
+    transform: scale(0.98)
+
+.btn-hire
+  padding: v.$space-2 v.$space-5
+  background: var(--color-primary)
+  color: var(--color-text-inverse)
+  font-size: v.$text-sm
+  font-weight: 600
+  border-radius: v.$radius-full
+
+  &:hover
+    background: var(--color-primary-hover)
+
+  &:active
+    background: var(--color-primary-active)
+    transform: scale(0.97)

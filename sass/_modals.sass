@@ -1,0 +1,310 @@
+// ─── MODAL SYSTEM ─────────────────────────────────────────────
+@use 'variables' as v
+
+// Backdrop
+.modal-backdrop
+  position: fixed
+  inset: 0
+  z-index: 200
+  background: oklch(0.1 0.01 200 / 0.7)
+  backdrop-filter: blur(6px)
+  -webkit-backdrop-filter: blur(6px)
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: v.$space-4
+  opacity: 0
+  pointer-events: none
+  transition: opacity v.$t-modal
+
+  &.is-open
+    opacity: 1
+    pointer-events: auto
+
+    .modal
+      transform: translateY(0) scale(1)
+      opacity: 1
+
+// Panel
+.modal
+  position: relative
+  width: 100%
+  max-width: v.$content-wide
+  max-height: 90dvh
+  overflow-y: auto
+  background: var(--color-surface)
+  border: 1px solid oklch(from var(--color-text) l c h / 0.08)
+  border-radius: v.$radius-2xl
+  padding: v.$space-8
+  box-shadow: 0 12px 32px oklch(0.2 0.01 80 / 0.12)
+  transform: translateY(16px) scale(0.98)
+  opacity: 0
+  transition: transform v.$t-modal, opacity v.$t-modal
+  scrollbar-width: thin
+  scrollbar-color: var(--color-border) transparent
+
+  &::-webkit-scrollbar
+    width: 6px
+
+  &::-webkit-scrollbar-track
+    background: transparent
+
+  &::-webkit-scrollbar-thumb
+    background: var(--color-border)
+    border-radius: v.$radius-full
+
+  &--narrow
+    max-width: 560px
+
+  &--gallery
+    max-width: v.$content-wide
+
+  @media (max-width: v.$bp-md)
+    padding: v.$space-6 v.$space-5
+    border-radius: v.$radius-xl
+
+// Header row
+.modal-header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: v.$space-4
+
+.modal-close
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 36px
+  height: 36px
+  border-radius: v.$radius-full
+  color: var(--color-text-muted)
+  flex-shrink: 0
+
+  &:hover
+    background: var(--color-surface-offset)
+    color: var(--color-text)
+
+  &:active
+    transform: scale(0.95)
+
+.modal-title
+  font-family: var(--font-display)
+  font-size: v.$text-2xl
+  font-weight: 500
+  letter-spacing: -0.03em
+  color: var(--color-text)
+  margin-bottom: v.$space-8
+  line-height: 1.1
+
+// ─── WORK MODAL ───────────────────────────────────────────────
+.projects-grid
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: v.$space-4
+
+  @media (max-width: v.$bp-md)
+    grid-template-columns: 1fr
+
+.project-card
+  background: var(--color-bg)
+  border: 1px solid oklch(from var(--color-text) l c h / 0.07)
+  border-radius: v.$radius-xl
+  overflow: hidden
+  transition: box-shadow v.$t-smooth, transform v.$t-smooth
+
+  &:hover
+    box-shadow: 0 4px 12px oklch(0.2 0.01 80 / 0.08)
+    transform: translateY(-2px)
+
+  &--featured
+    grid-column: 1 / -1
+
+    .project-img-wrap img
+      aspect-ratio: 16 / 7
+
+    @media (max-width: v.$bp-md)
+      grid-column: 1
+
+.project-img-wrap
+  overflow: hidden
+  background: var(--color-surface-offset)
+
+  img
+    width: 100%
+    aspect-ratio: 16 / 9
+    object-fit: cover
+    transition: transform v.$t-smooth
+
+  .project-card:hover & img
+    transform: scale(1.02)
+
+.project-info
+  padding: v.$space-5
+
+.project-meta
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: v.$space-3
+
+.project-tag
+  font-size: v.$text-xs
+  font-weight: 600
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  color: var(--color-primary)
+
+.project-year
+  font-size: v.$text-xs
+  color: var(--color-text-faint)
+  font-variant-numeric: tabular-nums
+
+.project-title
+  font-family: var(--font-display)
+  font-size: v.$text-xl
+  font-weight: 500
+  letter-spacing: -0.02em
+  color: var(--color-text)
+  margin-bottom: v.$space-2
+
+.project-desc
+  font-size: v.$text-sm
+  color: var(--color-text-muted)
+  line-height: 1.6
+  margin-bottom: v.$space-4
+  max-width: none
+
+.project-links
+  display: flex
+  gap: v.$space-4
+
+.project-link
+  display: inline-flex
+  align-items: center
+  gap: v.$space-1
+  font-size: v.$text-xs
+  font-weight: 600
+  color: var(--color-primary)
+  text-decoration: none
+  letter-spacing: 0.02em
+
+  &:hover
+    color: var(--color-primary-hover)
+
+// ─── ABOUT MODAL ──────────────────────────────────────────────
+.about-grid
+  display: grid
+  grid-template-columns: 1fr 320px
+  gap: v.$space-10
+  align-items: start
+
+  @media (max-width: v.$bp-lg)
+    grid-template-columns: 1fr
+
+.about-text
+  display: flex
+  flex-direction: column
+  gap: v.$space-5
+
+  p
+    font-size: v.$text-base
+    color: var(--color-text-muted)
+    line-height: 1.75
+
+.about-aside
+  display: flex
+  flex-direction: column
+  gap: v.$space-5
+
+.skills-block
+  background: var(--color-bg)
+  border: 1px solid oklch(from var(--color-text) l c h / 0.07)
+  border-radius: v.$radius-xl
+  padding: v.$space-5
+
+.skills-label
+  display: block
+  font-size: v.$text-xs
+  font-weight: 600
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  color: var(--color-text-muted)
+  margin-bottom: v.$space-4
+
+.skills-list
+  display: flex
+  flex-direction: column
+  gap: v.$space-2
+
+  li
+    font-size: v.$text-sm
+    color: var(--color-text)
+    padding: v.$space-2 0
+    border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.06)
+    max-width: none
+
+    &:last-child
+      border-bottom: none
+
+.about-note
+  display: flex
+  align-items: flex-start
+  gap: v.$space-3
+  padding: v.$space-4
+  background: var(--color-primary-highlight)
+  border-radius: v.$radius-xl
+  font-size: v.$text-sm
+  color: var(--color-primary-hover)
+  font-style: italic
+  line-height: 1.6
+
+.about-note-icon
+  font-style: normal
+  font-weight: 700
+  flex-shrink: 0
+
+// ─── CONTACT MODAL ────────────────────────────────────────────
+.contact-sub
+  font-size: v.$text-base
+  color: var(--color-text-muted)
+  margin-bottom: v.$space-8
+  max-width: 44ch
+
+.contact-email
+  display: inline-flex
+  align-items: center
+  gap: v.$space-3
+  font-family: var(--font-display)
+  font-size: v.$text-xl
+  font-weight: 500
+  color: var(--color-text)
+  text-decoration: none
+  letter-spacing: -0.02em
+  margin-bottom: v.$space-8
+  transition: color v.$t-ui
+
+  &:hover
+    color: var(--color-primary)
+
+  svg
+    transition: transform v.$t-ui
+
+  &:hover svg
+    transform: translate(4px, -4px)
+
+.contact-links
+  display: flex
+  align-items: center
+  gap: v.$space-3
+
+.contact-social
+  font-size: v.$text-sm
+  font-weight: 500
+  color: var(--color-text-muted)
+  text-decoration: none
+
+  &:hover
+    color: var(--color-primary)
+
+.contact-divider
+  color: var(--color-text-faint)
